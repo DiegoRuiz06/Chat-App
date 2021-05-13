@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from './logo.svg'
+import logo from './logo.svg';
 import './App.css';
 
-import Dashboard from './Dashboard';
-import Store from './Store'
+import 'antd/dist/antd.css';
 
-export default function App() {
+import Dashboard from './Container/Dashboard/Dashboard';
+import Store from "./Container/Dashboard/Store"
+
+function App() {
   return (
     <div className="App">
       <Store>
@@ -14,3 +16,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
