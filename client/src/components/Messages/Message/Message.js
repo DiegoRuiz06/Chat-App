@@ -3,6 +3,8 @@ import React from 'react';
 
 import './Message.css'
 
+import ReactEmoji from "react-emoji";
+
 const Message = ({ message: { user, text }, name }) => {
     let isSentByCurrentUser = false;
 
@@ -18,14 +20,14 @@ const Message = ({ message: { user, text }, name }) => {
             <div className="messageContainer justifyEnd">
                 <p className="sentText pr-10">{trimmedName}</p>
                 <div className="messageBox backgroundBlue">
-                    <p className="messsageText">{text}</p>
+                    <p className="messsageText">{ReactEmoji.emojify(text)}</p>
                 </div>
             </div>
         )
         : (
             <div className="messageContainer justifyStart">
                 <div className="messageBox backgroundLight">
-                    <p className="messsageText colorDark">{text}</p>
+                    <p className="messsageText colorDark">{ReactEmoji.emojify(text)}</p>
                 </div>
                 <p className="sentText pl-10">{user}</p>
             </div>
