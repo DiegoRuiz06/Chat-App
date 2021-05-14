@@ -17,4 +17,4 @@ const Input = ({ message, setMessage, sendMessage }) => (
  </form>
 )
 
-export default InfoBar;
+export default Input;
