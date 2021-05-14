@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket-io-clent';
 
+import './Chat.css';
+
+import InfoBar from '../InfoBar/InfoBar';
+import Input from '../Input/Input';
+
 let socket;
 
-import './Chat.css'
 
 const Chat = ({ location }) => {
     const [name, setName] = useState('');
@@ -48,9 +52,8 @@ const Chat = ({ location }) => {
     return (
         <div className="outerContainer">
             <div className="container">
-                <infoBar room={room} />
-                {/* <input value={message} onChange={(event) => setMessages(event.target.value)}
-                onKeyPress={event => event.key === 'Enter' ? sendMessage(event): null}></input> */}
+                <InfoBar room={room} />
+                <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
             </div>
         </div>
     )
